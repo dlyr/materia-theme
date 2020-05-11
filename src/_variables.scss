@@ -6,9 +6,9 @@ $asset-suffix: if($variant == 'dark', '-dark', '');
 
 $container-padding: if($compact == 'false', 6px, 4px);
 
-$small-size: if($compact == 'false', 24px, 24px);
-$medium-size: if($compact == 'false', 36px, 32px);
-$large-size: if($compact == 'false', 48px, 40px);
+$small-size: if($compact == 'false', 24px, 14px);
+$medium-size: if($compact == 'false', 36px, 24px);
+$large-size: if($compact == 'false', 48px, 32px);
 
 $bar-size: 4px;
 $menuitem-size: 28px;
@@ -17,7 +17,7 @@ $menuitem-size: 28px;
 // Radii
 //
 
-$corner-radius: 4px;
+$corner-radius: 0px;
 $circular-radius: 9999px;
 
 //
