@@ -4136,7 +4136,7 @@ decoration {
   transition: $transition-shadow;
   border-radius: $corner-radius $corner-radius 0 0;
   box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
-
+  
   // FIXME rationalize shadows
 
   // this is used for the resize cursor area
@@ -4168,7 +4168,12 @@ decoration {
   .ssd & {
     box-shadow: 0 3px 3px rgba(black, .16); // just doing borders, wm draws actual shadows
   }
-
+  // same for unfocused
+  // server-side decorations as used by mutter
+  .ssd &:backdrop {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16),  0px 0px 0px 2px rgba(black, .8); // just doing borders, wm draws actual shadows
+  }
+  
   .csd.popup & {
     border-radius: $corner-radius;
     box-shadow: $shadow-z4;

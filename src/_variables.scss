@@ -1,3 +1,5 @@
+@import 'colors';
+
 $asset-suffix: if($variant == 'dark', '-dark', '');
 
 //
@@ -78,7 +80,9 @@ $shadow-z3:
 $shadow-z4:
   0 2px (4px * .6) -1px rgba(black, .2),
   0 4px (5px * .6) 0 rgba(black, .14),
-  0 1px (10px * .6) 0 rgba(black, .12);
+  0 1px (10px * .6) 0 rgba(black, .12),
+// add a solid border around un focused window
+  0px 0px 0px 2px black;
 $shadow-z6:
   0 3px (5px * .6) -1px rgba(black, .2),
   0 6px (10px * .6) 0 rgba(black, .14),
@@ -94,7 +98,10 @@ $shadow-z12:
 $shadow-z16:
   0 8px (10px * .6) -5px rgba(black, .2),
   0 16px (24px * .6) 2px rgba(black, .14),
-  0 6px (30px * .6) 5px rgba(black, .12);
+  0 6px (30px * .6) 5px rgba(black, .12),
+// add a solid border around focused window
+  0px 0px 0px 2px $primary;
+
 $shadow-z24:
   0 11px (15px * .6) -7px rgba(black, .2),
   0 24px (38px * .6) 3px rgba(black, .14),
