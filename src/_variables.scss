@@ -1,3 +1,5 @@
+@import 'colors';
+
 $asset-suffix: if($variant == 'dark', '-dark', '');
 
 //
@@ -6,9 +8,9 @@ $asset-suffix: if($variant == 'dark', '-dark', '');
 
 $container-padding: if($compact == 'false', 6px, 4px);
 
-$small-size: if($compact == 'false', 24px, 24px);
-$medium-size: if($compact == 'false', 36px, 32px);
-$large-size: if($compact == 'false', 48px, 40px);
+$small-size: if($compact == 'false', 24px, 14px);
+$medium-size: if($compact == 'false', 36px, 24px);
+$large-size: if($compact == 'false', 48px, 32px);
 
 $bar-size: 4px;
 $menuitem-size: 28px;
@@ -17,7 +19,7 @@ $menuitem-size: 28px;
 // Radii
 //
 
-$corner-radius: 4px;
+$corner-radius: 0px;
 $circular-radius: 9999px;
 
 //
@@ -78,7 +80,9 @@ $shadow-z3:
 $shadow-z4:
   0 2px (4px * .6) -1px rgba(black, .2),
   0 4px (5px * .6) 0 rgba(black, .14),
-  0 1px (10px * .6) 0 rgba(black, .12);
+  0 1px (10px * .6) 0 rgba(black, .12),
+// add a solid border around un focused window
+  0px 0px 0px 1px black;
 $shadow-z6:
   0 3px (5px * .6) -1px rgba(black, .2),
   0 6px (10px * .6) 0 rgba(black, .14),
@@ -94,7 +98,10 @@ $shadow-z12:
 $shadow-z16:
   0 8px (10px * .6) -5px rgba(black, .2),
   0 16px (24px * .6) 2px rgba(black, .14),
-  0 6px (30px * .6) 5px rgba(black, .12);
+  0 6px (30px * .6) 5px rgba(black, .12),
+// add a solid border around focused window
+  0px 0px 0px 1px $primary;
+
 $shadow-z24:
   0 11px (15px * .6) -7px rgba(black, .2),
   0 24px (38px * .6) 3px rgba(black, .14),

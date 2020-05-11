@@ -70,14 +70,16 @@
 
   // for 3.30
   .path-bar button {
-    label:not(:only-child) {
-      &:first-child {
-        margin-left: 0;
-      }
+ // dlyr and add these ones
+//     padding-left: ($medium-size - $small-size) / 2;
+//      padding-right: ($medium-size -  $small-size) / 2;
+  //padding-left: 5px;//($medium-size - $small-size) / 2;
+   // padding-right: 5px;//($medium-size -  $small-size) / 2;
 
-      &:last-child {
-        margin-right: 0;
-      }
+    label:not(:only-child) {
+      &:first-child { margin-left: 0; }
+
+      &:last-child { margin-right: 0; }
     }
   }
 
@@ -85,19 +87,23 @@
   .nautilus-path-bar button:not(.suggested-action):not(.destructive-action) {
     padding-left: ($medium-size - 24px) / 2;
     padding-right: ($medium-size - 24px) / 2;
+    padding-left: 5px;//($medium-size - $small-size) / 2;
+    padding-right: 5px;//($medium-size -  $small-size) / 2;
 
-    &.text-button {
-      min-width: 0;
-    }
-
+    &.text-button { min-width: 0; 
+		    margin-left: 5px; 
+//border: 1px solid teal;
+		  }
     label:not(:only-child) {
-      &:first-child {
-        margin-left: 0;
-      }
+	margin-left: 5px;
+	//border: 1px solid blue;
+      &:first-child { margin-left: 0; 
+		      //border: 1px solid red;
+		    }
 
-      &:last-child {
-        margin-right: 0;
-      }
+      &:last-child { margin-right: 0; 
+		     //border: 1px solid green;
+		   }
     }
 
     &.text-button.image-button image:not(:only-child) {
@@ -1099,16 +1105,38 @@ box.vertical > revealer > toolbar.search-bar {
 terminal-window notebook > header > box {
   // Remove hard-coded margin around button(s)
   margin: -2px -2px -3px;
+}
 
-  button {
-    // margin-bottom: -1px;
+
+terminal-window notebook > header.top button {
+  padding: 0;
+  margin: 0 5px 0 5px;
+  border: 0;
+  border-radius: 0px;
+}
+
+terminal-window header.top > tabs * {
+    margin:0;
+    padding:1px 5px 2px 5px;
+}
+
+terminal-window  header.top > tabs > tab {
+    margin: 0;
+    padding: 0;
+    min-height:0;
     border-radius: 0;
-  }
+}
+
+terminal-window  header.top > tabs > tab label {
+    padding: 0;
+    margin: 0;
+    min-height: 0;
 }
 
 /**
  * To Do
  */
+
 
 // less than 3.28
 task-list-view {
