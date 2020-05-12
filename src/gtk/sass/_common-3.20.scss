@@ -548,6 +548,8 @@ button {
   min-height: 24px;
   min-width: 16px;
   padding: ($medium-size - 24px) / 2 ($medium-size - 16px) / 2;
+
+// the previous one have to tight button ... but this one affect header in dialog :(
   padding: ($medium-size) / 4 ($medium-size ) / 6;
   border-radius: $corner-radius;
   background-color: $surface;
@@ -1512,7 +1514,7 @@ searchbar > revealer > box {
       }
     }
 
-    // small button in headerbar
+    // small button in headerbar needed for nautilus
     	padding: 0;
   }
 
