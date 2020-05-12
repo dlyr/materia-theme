@@ -48,6 +48,8 @@
 
 // Path bar
 
+
+
 .path-bar-box {
   transition: background-color $duration $ease-out;
   margin: $container-padding 0;
@@ -70,8 +72,13 @@
 
   // for 3.30
   .path-bar button {
+ // dlyr and add these ones
+//     padding-left: ($medium-size - $small-size) / 2;
+//      padding-right: ($medium-size -  $small-size) / 2;
+
     label:not(:only-child) {
       &:first-child {
+// dlyr check if need to remove these margins ...
         margin-left: 0;
       }
 
@@ -736,7 +743,6 @@ docktab {
     background-size: 1000% 1000%;
     color: $on-surface;
   }
-  border:1px solid red;
 }
 
 dockoverlayedge {
@@ -1096,16 +1102,6 @@ box.vertical > revealer > toolbar.search-bar {
 /**
  * Terminal
  */
-
-
-terminal-window notebook > header > tabs {
-    tab{
-	padding:0;
-    }
-    button{
-	padding:0;
-    }
-}
 
 
 terminal-window notebook > header > box {
