@@ -4148,7 +4148,7 @@ decoration {
     // The biggest shadow should be in the same order then in the active state
     // or the jumping will happen during the transition.
     box-shadow: $shadow-z4, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
-  }
+   }
 
   .maximized &,
   .fullscreen &,
@@ -4158,6 +4158,7 @@ decoration {
   .tiled-bottom &,
   .tiled-left & {
     border-radius: 0;
+    box-shadow:none;
   }
 
   .popup & {
@@ -4166,13 +4167,14 @@ decoration {
 
   // server-side decorations as used by mutter
   .ssd & {
-    box-shadow: 0 3px 3px rgba(black, .16); // just doing borders, wm draws actual shadows
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16),  0px 0px 0px 1px $primary; // just doing borders, wm draws actual shadows
+    // and a solid border
   }
   // same for unfocused
   // server-side decorations as used by mutter
   .ssd &:backdrop {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16),  0px 0px 0px 2px rgba(black, .8); // just doing borders, wm draws actual shadows
-  }
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16),  0px 0px 0px 1px rgba(black, .8); // just doing borders, wm draws actual shadows
+   }
   
   .csd.popup & {
     border-radius: $corner-radius;
