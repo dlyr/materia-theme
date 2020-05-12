@@ -90,8 +90,8 @@
 
   // for 3.32
   .nautilus-path-bar button:not(.suggested-action):not(.destructive-action) {
-    padding-left: ($medium-size - $small-size) / 2;
-    padding-right: ($medium-size -  $small-size) / 2;
+    padding-left: ($medium-size - 24px) / 2;
+    padding-right: ($medium-size - 24px) / 2;
 
     &.text-button {
       min-width: 0;
