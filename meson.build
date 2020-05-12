@@ -1,6 +1,6 @@
 project(
-  'materia-theme',
-  version: '20200916',
+  'materia-dlyr-theme',
+  version: '20200320',
   license: 'GPLv2+',
   meson_version: '>= 0.47.0',
   default_options: ['prefix=/usr'],
