@@ -78,7 +78,7 @@ $shadow-z3:
   0 3px (4px * .6) 0 rgba(black, .14),
   0 1px (8px * .6) 0 rgba(black, .12);
 $shadow-z4:
-  0 2px (4px * .6) 2px rgba(black, .8),
+  0 2px (4px * .6) -1px rgba(black, .2),
   0 4px (5px * .6) 0 rgba(black, .14),
   0 1px (10px * .6) 0 rgba(black, .12),
 // add a solid border around un focused window
@@ -96,7 +96,7 @@ $shadow-z12:
   0 12px (17px * .6) 2px rgba(black, .14),
   0 5px (22px * .6) 4px rgba(black, .12);
 $shadow-z16:
-  0 8px (10px * .6) 2px rgba(black, .8),
+  0 8px (10px * .6) -5px rgba(black, .2),
   0 16px (24px * .6) 2px rgba(black, .14),
   0 6px (30px * .6) 5px rgba(black, .12),
 // add a solid border around focused window
