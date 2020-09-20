@@ -317,8 +317,9 @@ spinner {
 
 %entry,
 entry {
-  min-height: $medium-size;
-  padding: 0 8px;
+    min-height: $medium-size;
+    //fix filezilla
+  padding: 0 4px;
   border-radius: $corner-radius $corner-radius 0 0;
 
   @include entry(normal);
