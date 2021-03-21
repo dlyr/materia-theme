@@ -318,8 +318,9 @@ spinner {
 %entry,
 entry {
     min-height: $medium-size;
+ // padding: 0 8px;
     //fix filezilla
-  padding: 0 4px;
+  padding: 0 4px;//dlyr
   border-radius: $corner-radius $corner-radius 0 0;
 
   @include entry(normal);
@@ -550,8 +551,8 @@ button {
   min-width: 16px;
   padding: ($medium-size - 24px) / 2 ($medium-size - 16px) / 2;
   
-// the previous one have to tight button ... but this one affect header in dialog :(
-  padding: ($medium-size) / 4 ($medium-size ) / 6;
+  // the previous one have to tight button ... but this one affect header in dialog :(
+  padding: ($medium-size) / 4 ($medium-size ) / 6;//dlyr
   border-radius: $corner-radius;
   background-color: $surface;
   color: $on-surface;
@@ -1188,7 +1189,8 @@ combobox {
     min-height: 16px;
     min-width: 16px;
     margin: ($medium-size - $small-size) / 2;
-    padding: ($small-size - 14px) / 2;
+ //   padding: ($small-size - 16px) / 2;
+    padding: ($small-size - 14px) / 2;//dlyr
  //   padding: ($small-size - 8px) / 2;
   //  padding-left: ($medium-size - $small-size) / 2;
   //  padding-right: ($medium-size -  $small-size) / 2;
@@ -1516,7 +1518,7 @@ searchbar > revealer > box {
     }
 
     // small button in headerbar needed for nautilus
-    padding: 0;
+    padding: 0;//dlyr
   }
 
   button.suggested-action, button.destructive-action {
@@ -1536,8 +1538,8 @@ searchbar > revealer > box {
     min-width: 0;
     padding-left: ($medium-size - 24px) / 2;
     padding-right: ($medium-size - 24px) / 2;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 5px;//dlyr
+    padding-right: 5px;//dlyr
   }
 
   &.selection-mode {
@@ -1715,8 +1717,8 @@ window.devel .titlebar:not(.selection-mode) {
 
   padding-left: ($medium-size - 24px) / 2;
   padding-right: ($medium-size - 24px) / 2;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 5px;//dlyr
+  padding-right: 5px;//dlyr
   border-image:
     radial-gradient(
       circle closest-corner at center calc(100% - 1px),
@@ -2172,7 +2174,6 @@ notebook {
 
         > tab {
           border-image: linear-gradient(to top, transparent 2px, transparent 2px) 2 / 0 0 2px;
-//	  padding: 0;
 
           &:checked {
             border-image-source: linear-gradient(to top, $primary 2px, divider($on-surface) 2px);
@@ -4175,7 +4176,7 @@ decoration {
   .tiled-bottom &,
   .tiled-left & {
     border-radius: 0;
-    box-shadow:none;
+    box-shadow:none;//dlyr
   }
 
   .popup & {
@@ -4184,14 +4185,14 @@ decoration {
 
   // server-side decorations as used by mutter
   .ssd & {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16),  0px 0px 0px 1px $primary; // just doing borders, wm draws actual shadows
-    // and a solid border
+    //box-shadow: 0 3px 3px rgba(black, .16); // just doing borders, wm draws actual shadows
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16),  0px 0px 0px 1px $primary; //dlyr
   }
-  // same for unfocused
-  // server-side decorations as used by mutter
-  .ssd &:backdrop {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16),  0px 0px 0px 1px rgba(black, .8); // just doing borders, wm draws actual shadows
-   }
+  // same for unfocused //dlyr
+  // server-side decorations as used by mutter //dlyr
+  .ssd &:backdrop { //dlyr
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16),  0px 0px 0px 1px rgba(black, .8); //dlyr
+} //dlyr
   
   .csd.popup & {
     border-radius: $corner-radius;
