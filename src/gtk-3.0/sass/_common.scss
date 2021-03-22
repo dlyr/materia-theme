@@ -332,8 +332,8 @@ spinner {
 %entry,
 entry {
     min-height: $medium-size;
- // padding: 0 8px;
-    //fix filezilla
+  // padding: 0 8px;
+  //fix filezilla
   padding: 0 4px;//dlyr
   border-radius: $corner-radius $corner-radius 0 0;
 
@@ -558,7 +558,7 @@ treeview entry {
 button {
   min-height: 24px;
   min-width: 16px;
-  padding: ($medium-size - 24px) / 2 ($medium-size - 16px) / 2;
+  // padding: ($medium-size - 24px) / 2 ($medium-size - 16px) / 2;
   
   // the previous one have to tight button ... but this one affect header in dialog :(
   padding: ($medium-size) / 4 ($medium-size ) / 6;//dlyr
@@ -1210,11 +1210,6 @@ combobox {
     margin: ($medium-size - $small-size) / 2;
  //   padding: ($small-size - 16px) / 2;
     padding: ($small-size - 14px) / 2;//dlyr
- //   padding: ($small-size - 8px) / 2;
-  //  padding-left: ($medium-size - $small-size) / 2;
-  //  padding-right: ($medium-size -  $small-size) / 2;
-
-
     border-radius: $circular-radius;
   }
 }

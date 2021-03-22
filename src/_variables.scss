@@ -15,14 +15,14 @@ $medium-size: 36px;
 $large-size: 48px;
 
 @if $compact {
-  $container-padding: 4px;
-  $small-size: 24px;
-  $medium-size: 32px;
-  $large-size: 40px;
-
-$small-size:  14px;//dlyr
-$medium-size: 24px;//dlyr
-$large-size:  32px;//dlyr
+//  $container-padding: 4px;
+//  $small-size: 24px;
+//  $medium-size: 32px;
+//  $large-size: 40px;
+  $container-padding: 2px;//dlyr
+  $small-size:  14px;//dlyr
+  $medium-size: 24px;//dlyr
+  $large-size:  32px;//dlyr
 }
 
 $bar-size: 4px;

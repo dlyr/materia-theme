@@ -83,23 +83,26 @@
 
   // for 3.32
   .nautilus-path-bar button:not(.suggested-action):not(.destructive-action) {
-    padding-left: ($medium-size - 24px) / 2;
-    padding-right: ($medium-size - 24px) / 2;
+//    padding-left: ($medium-size - 24px) / 2;
+//    padding-right: ($medium-size - 24px) / 2;
     padding-left: 5px;//($medium-size - $small-size) / 2; //dlyr
     padding-right: 5px;//($medium-size -  $small-size) / 2;//dlyr
 
-    &.text-button { min-width: 0; 
+    &.text-button { 
+                    min-width: 0; 
 		    margin-left: 5px; //dlyr
-//border: 1px solid teal;
+		    //border: 1px solid teal;
     }
     label:not(:only-child) {
 	margin-left: 5px;//dlyr
 	//border: 1px solid blue;
-      &:first-child { margin-left: 0; 
+      &:first-child { 
+           margin-left: 0; 
 		      //border: 1px solid red;
       }
 
-      &:last-child { margin-right: 0; 
+      &:last-child {
+        margin-right: 0;
 		     //border: 1px solid green;
       }
     }
