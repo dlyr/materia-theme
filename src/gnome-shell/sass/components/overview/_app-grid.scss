@@ -2,11 +2,20 @@
 
 // app icons
 .icon-grid {
-  @if $version >= 3.38 {
-    row-spacing: 32px;
-    column-spacing: 32px;
-    max-row-spacing: 64px;
-    max-column-spacing: 64px;
+  @if $version >= 40 {
+    row-spacing: 12px;
+    column-spacing: 12px;
+    max-row-spacing: 72px;
+    max-column-spacing: 72px;
+    page-padding-top: 24px;
+    page-padding-bottom: 24px;
+    page-padding-left: 12px;
+    page-padding-right: 12px;
+  } @else if $version >= 3.38 {
+    row-spacing: 48px;
+    column-spacing: 48px;
+    max-row-spacing: 96px;
+    max-column-spacing: 96px;
   } @else {
     -shell-grid-horizontal-item-size: 136px;
     -shell-grid-vertical-item-size: 136px;
@@ -18,7 +27,7 @@
   }
 }
 
-@if $version <= 3.36 {
+@if $version < 3.38 {
   .app-display {
     // spacing: 20px;
   }
@@ -45,17 +54,19 @@
 .app-well-app.app-folder {
   @extend %app-well-app;
   border-radius: $corner-radius; // same as .overview-icon
-  background-color: fill($on-dark);
+  background-color: transparent;
 }
 
 // expanded folder
 .app-folder-dialog {
   border: 0;
   border-radius: $corner-radius;
-  background-color: $surface;
+  background-color: $surface-z8;
   color: $on-surface;
 
-  @if $version >= 3.38 {
+  @if $version >= 40 {
+    padding: 12px 0;
+  } @else if $version >= 3.38 {
     padding: 12px;
   } @else {
     spacing: 12px;
@@ -99,13 +110,22 @@
   .icon-grid {
     row-spacing: 16px;
     column-spacing: 32px;
+
+    @if $version >= 40 {
+      page-padding-top: 0;
+      page-padding-bottom: 0;
+      page-padding-left: 0;
+      page-padding-right: 0;
+    }
   }
 
   .page-indicators {
     margin-bottom: 16px;
 
-    .page-indicator {
-      padding: 16px 12px;
+    @if $version < 40 {
+      .page-indicator {
+        padding: 16px 12px;
+      }
     }
   }
 
@@ -145,7 +165,7 @@
   }
 }
 
-@if $version <= 3.34 {
+@if $version < 3.36 {
   // expanded collection
   .app-folder-popup {
     -arrow-base: 24px;
@@ -159,10 +179,19 @@
   }
 }
 
-.app-folder-icon {
-  padding: 5px;
-  spacing-rows: 10px;
-  spacing-columns: 10px;
+@if $version < 40 {
+  .app-folder-icon {
+    padding: 8px;
+    spacing-rows: 4px;
+    spacing-columns: 4px;
+    border-radius: $corner-radius;
+    background-color: fill($on-dark);
+
+    // HACK: Force icon size to 32px
+    > StBin > StIcon {
+      padding: 2px;
+    }
+  }
 }
 
 // Running app indicator (also shown in dash)
@@ -194,7 +223,11 @@
 
 // App Grid pagination indicators
 .page-indicator {
-  padding: 15px 20px;
+  @if $version >= 40 {
+    padding: 8px 12px 0;
+  } @else {
+    padding: 16px 20px;
+  }
 
   @if $version >= 3.36 {
     .page-indicator-icon {
@@ -241,18 +274,31 @@
   }
 }
 
-// Some hacks I don't even know
-$search-display: if($version <= 3.32, ".search-display > StBoxLayout,", null);
-$frequent-apps: if($version <= 3.36, ".frequent-apps > StBoxLayout,", null);
-
-#{$search-display}
-#{$frequent-apps}
-.all-apps {
-  // horizontal padding to make sure scrollbars or dash don't overlap content
-  padding: 0 88px 10px;
+@if $version >= 40 {
+  .apps-scroll-view {
+    padding: 0;
+  }
+} @else if $version >= 3.38 {
+  .all-apps {
+    // horizontal padding to make sure scrollbars or dash don't overlap content
+    padding: 0 88px 10px;
+  }
+} @else if $version >= 3.34 {
+  .all-apps,
+  .frequent-apps > StBoxLayout {
+    // horizontal padding to make sure scrollbars or dash don't overlap content
+    padding: 0 88px 10px;
+  }
+} @else {
+  .search-display > StBoxLayout,
+  .all-apps,
+  .frequent-apps > StBoxLayout {
+    // horizontal padding to make sure scrollbars or dash don't overlap content
+    padding: 0 88px 10px;
+  }
 }
 
-@if $version <= 3.36 {
+@if $version < 3.38 {
   // Label when no frequent apps
   .no-frequent-applications-label {
     @extend %overview-status-text;
@@ -268,7 +314,39 @@ $frequent-apps: if($version <= 3.36, ".frequent-apps > StBoxLayout,", null);
   color: on($grey-900);
 }
 
-@if $version <= 3.36 {
+@if $version >= 40 {
+  .page-navigation-hint {
+    width: 300px;
+
+    &.dnd {
+      background: overlay("dragged", $on-system);
+    }
+
+    &.next:ltr,
+    &.previous:rtl {
+      background-gradient-start: fill($on-system);
+      background-gradient-end: fill($on-system);
+      background-gradient-direction: horizontal;
+      border-radius: $corner-radius 0 0 $corner-radius;
+    }
+
+    &.previous:ltr,
+    &.next:rtl {
+      background-gradient-start: fill($on-system);
+      background-gradient-end: fill($on-system);
+      background-gradient-direction: horizontal;
+      border-radius: 0 $corner-radius $corner-radius 0;
+    }
+  }
+
+  .page-navigation-arrow {
+    width: 24px;
+    height: 24px;
+    margin: 6px;
+  }
+}
+
+@if $version < 3.38 {
   /* Frequent | All toggle */
 
   // container

@@ -7,8 +7,8 @@
 .modal-dialog {
   border: 0;
   border-radius: $corner-radius;
-  box-shadow: $shadow-4;
-  background-color: $surface;
+  box-shadow: $shadow-z8;
+  background-color: $surface-z8;
   color: $on-surface;
 
   @if $version >= 3.36 {
@@ -377,13 +377,15 @@
     }
   }
 
-  .polkit-dialog-user-icon {
-    border-radius: $circular-radius;
-    background-size: contain;
+  @if $version < 40 {
+    .polkit-dialog-user-icon {
+      border-radius: $circular-radius;
+      background-size: contain;
 
-    @if $version <= 3.34 {
-      width: 48px;
-      height: 48px;
+      @if $version < 3.36 {
+        width: 48px;
+        height: 48px;
+      }
     }
   }
 
@@ -446,7 +448,18 @@
   icon-size: 64px;
 }
 
-@if $version <= 3.34 {
+@if $version >= 40 {
+  /* Welcome dialog */
+  .welcome-dialog-image {
+    // Reasonable maximum dimensions
+    height: 300px;
+    width: 300px;
+    background-image: url("gnome-shell-start.svg");
+    background-size: contain;
+  }
+}
+
+@if $version < 3.36 {
   /* ShellMountOperation Dialogs */
   .shell-mount-operation-icon {
     icon-size: 48px;
