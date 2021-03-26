@@ -1119,16 +1119,12 @@ terminal-window notebook > header > box {
 }
 
 //dlyr
-terminal-window notebook > header.top button {
-  padding: 0;
-  margin: 0 5px 0 5px;
-  border: 0;
-  border-radius: 0px;
-}
 
 terminal-window header.top > tabs * {
-    margin:0;
-    padding:1px 5px 2px 5px;
+  margin:0;
+  padding:1px 5px 2px 5px;
+  border: 0;
+  border-radius: 0px;
 }
 
 terminal-window  header.top > tabs > tab {
@@ -1143,6 +1139,25 @@ terminal-window  header.top > tabs > tab label {
     padding: 0;
     margin: 0;
     min-height: 0;
+    border-radius: 0px;
+}
+
+
+terminal-window notebook > header.top button,
+terminal-window  header.top > tabs > tab button
+{
+  min-width:0;
+  min-height:0;
+  padding: 0;
+  margin: 0;
+  border:0;
+  border-radius: 0;
+  radius:0;
+}
+terminal-window  header.top > tabs > tab button
+ {
+  padding: 0 5px 0 0;
+  border: 0;
 }
 
 /**
